@@ -7,7 +7,7 @@ const router = new Router();
 app.use(router.routes())
     .use(router.allowedMethods());
 
-router.get('/', async (ctx, next) => {
+router.get('/db', async (ctx, next) => {
     const db = new OperateDB('./test.db');
     await db.connectDB().then(async result => {
         console.log(result);
